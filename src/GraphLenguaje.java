@@ -48,17 +48,17 @@ public class GraphLenguaje {
             }
             if (aux.ok == true && aux.map.size() > 1) {
                 cantidad.add(size + 1); //
-                posicion.add(x);
+                posicion.add(x);  //en caso de tener mas opciones se guardan los posibles caminos
             }
             if (aux.map.containsKey(c)) {
-                aux = aux.getNode(c);
+                aux = aux.getNode(c);  //se avanza en el grafo
             } else if (!cantidad.isEmpty()) {
                 if (error.equals("")) {
-                    error = w.substring(x, w.length());
+                    error = w.substring(x, w.length()); //posibles errores
                 }
-                size = cantidad.remove(cantidad.size() - 1);
+                size = cantidad.remove(cantidad.size() - 1); //si usa el guardado
                 x = posicion.remove(posicion.size() - 1);
-                aux = root;
+                aux = root; //se reinicia el root
             } else {
                 if (error.equals("")) {
                     error = w.substring(x, w.length());
